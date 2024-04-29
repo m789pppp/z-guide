@@ -39,19 +39,6 @@ model = genai.GenerativeModel(model_name="gemini-1.5-pro-latest",
                               generation_config=generation_config,
                               safety_settings=safety_settings)
 
-# Function to process PDF files and add their contents to the conversation history
-def process_pdf_documents(directory_path):
-    conversation_history = []
-    for file_name in os.listdir(directory_path):
-        file_path = os.path.join(directory_path, file_name)
-        if os.path.isfile(file_path) and file_name.lower().endswith('.pdf'):
-            with open(file_path, "rb") as file_obj:
-                pdf_reader = PyPDF2.PdfReader(file_obj)
-                for page in pdf_reader.pages:
-                    page_text = page.extract_text()
-                    conversation_history.append({"role": "user", "parts": [page_text]})
-    return conversation_history
-
 # Function to start a conversation and generate a response based on user input
 def generate_response(user_input, conversation_history):
     convo = model.start_chat(history=conversation_history)
@@ -71,7 +58,7 @@ def process():
         # Process PDF documents and add their contents to the conversation history
         directory_path = r"D:\app45\Scholarships"
         conversation_history = process_pdf_documents(directory_path)
-
+        
         # Generate a response using the model and conversation history
         response = generate_response(user_question, conversation_history)
 

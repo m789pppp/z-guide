@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Z Admission</title>
+    <!-- External libraries -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    
+    <!-- Custom styles -->
+    <style>
+        body {
+            background: rgb(96, 143, 149);
+            background: -moz-linear-gradient(-45deg, rgba(96, 143, 149, 1) 0%, rgba(0, 133, 136, 1) 9%, rgba(12, 36, 73, 1) 52%, rgba(26, 30, 59, 1) 100%);
+            background: -webkit-linear-gradient(-45deg, rgba(96, 143, 149, 1) 0%, rgba(0, 133, 136, 1) 9%, rgba(12, 36, 73, 1) 52%, rgba(26, 30, 59, 1) 100%);
+            background: linear-gradient(135deg, rgba(96, 143, 149, 1) 0%, rgba(0, 133, 136, 1) 9%, rgba(12, 36, 73, 1) 52%, rgba(26, 30, 59, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#608f95', endColorstr='#1a1e3b', GradientType=1);
+        }
+        .logo-button {
+            position: fixed;
+            top: 20px;
+            left: 30px;
+            width: 110px;
+            height: 120px;
+            background-color: #ffffff;
+            border-radius: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 100%;
+        }
+        .fixed-panel {
+            min-height: 400px;
+            max-height: 400px;
+            background-color: #19313c;
+            color: white;
+            overflow: auto;
+        }
+        .media-list {
+            overflow: auto;
+            clear: both;
+            display: table;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: normal;
+            line-break: strict;
+        }
+        .panel {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 6px solid transparent;
+            border-radius: 25px;
+            -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+            box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        }
+        .panel-info {
+            border-color: #0c2735;
+        }
+        .panel-info>.panel-heading {
+            color: white;
+            background-color: #0c2735;
+            border-color: #0c2735;
+        }
+        .panel-footer {
+            padding: 10px 15px;
+            background-color: #0c2735;
+            border-top: 1px solid #0c2735;
+            border-bottom-right-radius: 3px;
+            border-bottom-left-radius: 3px
+        }
+        body {
+            background: rgb(96,143,149); /* Old browsers */
+            background: -moz-linear-gradient(-45deg, rgba(96,143,149,1) 0%, rgba(0,133,136,1) 9%, rgba(12,36,73,1) 52%, rgba(26,30,59,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(96,143,149,1) 0%,rgba(0,133,136,1) 9%,rgba(12,36,73,1) 52%,rgba(26,30,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(96,143,149,1) 0%,rgba(0,133,136,1) 9%,rgba(12,36,73,1) 52%,rgba(26,30,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#608f95', endColorstr='#1a1e3b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        }
+
+        /* Team Members Section */
+        .cid-u5uIivDIez {
+            padding-top: 5rem;
+            padding-bottom: 4rem;
+            background-color: transparent;
+        }
+
+        .cid-u5uIivDIez .item-mb {
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 767px) {
+            .cid-u5uIivDIez .item-mb {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .cid-u5uIivDIez .item-head {
+            background: var(--primary-color, #9fe870);
+            padding: 2.25rem;
+        }
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .cid-u5uIivDIez .item-head {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .cid-u5uIivDIez .item-head {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .cid-u5uIivDIez .item-content {
+            padding: 2.25rem 2.25rem 0;
+            background: #ffffff;
+        }
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .cid-u5uIivDIez .item-content {
+                padding: 0rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .cid-u5uIivDIez .item-content {
+                padding: 0rem 1.5rem;
+            }
+        }
+
+        .cid-u5uIivDIez .item-wrapper {
+            border-radius: 2rem;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            background: #ffffff;
+            padding: 0rem;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        @media (max-width: 767px) {
+            .cid-u5uIivDIez .item-wrapper {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1200px) {
+            .cid-u5uIivDIez .item-wrapper .item-footer {
+                padding: 0 1.5rem 2rem;
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .cid-u5uIivDIez .item-wrapper .item-footer {
+                padding: 0 2rem 2rem;
+            }
+        }
+
+        .cid-u5uIivDIez .btn {
+            width: -webkit-fill-available;
+        }
+
+        .cid-u5uIivDIez .item:focus,
+        .cid-u5uIivDIez span:focus {
+            outline: none;
+        }
+
+        .cid-u5uIivDIez .mbr-section-btn {
+            margin-top: auto !important;
+            padding: 2rem 2rem 0;
+        }
+
+        @media (max-width: 991px) {
+            .cid-u5uIivDIez .mbr-section-btn {
+                padding: 0rem 2.25rem 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .cid-u5uIivDIez .mbr-section-btn {
+                padding: 0rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .cid-u5uIivDIez .mbr-section-title {
+            color: #000000;
+        }
+
+        .cid-u5uIivDIez .mbr-section-subtitle {
+            color: #ffffff;
+        }
+
+        .cid-u5uIivDIez .mbr-text,
+        .cid-u5uIivDIez .mbr-section-btn {
+            text-align: left;
+        }
+
+        .cid-u5uIivDIez .item-title {
+            text-align: left;
+            color: var(--primary-text, #ffffff);
+        }
+
+        .cid-u5uIivDIez .item-subtitle {
+            text-align: left;
+            color: var(--primary-text, #ffffff);
+        }
+
+        .cid-u5uIivDIez .content-head {
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+</head>
+<body>
+<div class="container">
+    <h3 class="text-center">
+     
+       <img src="assets/images/Z-admisson.png" style="height: 4.3rem;">
+    </h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div id="chatPanel" class="panel panel-info">
+                    <div class="panel-heading">
+                        <strong><span class="glyphicon glyphicon-globe"></span> Hi how can I help you today</strong>
+                    </div>
+                    <div class="panel-body fixed-panel">
+                        <!-- Chat history and answer will be displayed here -->
+                        <div id="chatHistory">
+                            <!-- Display chat history here -->
+                            {% if chat_history %}
+                            <ul>
+                                {% for message in chat_history %}
+                                <li>{{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                        </div>
+                        <!-- Display answer here -->
+                        {% if answer %}
+                        <div class="alert alert-info" role="alert">
+                            {{ answer }}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="panel-footer">
+                        <form method="post" action="/process">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Enter Message" name="question" id="question" autofocus>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="submit" id="chatbot-form-btn">Send</button>
+                                    <button class="btn btn-info" type="button" id="chatbot-form-btn-clear">Clear</button>
+                                    <button class="btn btn-info" type="button" id="chatbot-form-btn-voice">Voice</button>
+                                </span>
+                            </div>
+                        </form>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
