@@ -1,0 +1,4 @@
+flask 
+guicorn
+google.generativeai 
+PyPDF2
